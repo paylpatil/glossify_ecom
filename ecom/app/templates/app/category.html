@@ -1,0 +1,33 @@
+{% extends "app/base.html" %}
+{% load static %}
+{% block title %} Category {% endblock title %}
+
+{% block main-content %}
+<div class="container">
+    <div class="col-sm-3">
+        <div class="list-group">
+            {% for val in title %}
+                <a href="{% url 'category-title' val.title %}" class="list-group-item" aria-current="true">{{ val.title }}</a>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="products-container">
+        <div class="row">
+            {% for prod in product %}
+            <div class="product-card col">
+                <a href="{% url 'product-detail' prod.id %}" class="btn">
+                    <div>
+                        <img src="{{ prod.product_image.url }}" class="img"/>
+                        <div class="product-title">{{ prod.title }}</div>
+                        <div class="product-price">
+                            Rs.{{ prod.discounted_price }}/-
+                            <small class="product-price small">{{ prod.selling_price }}</small>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock main-content %}

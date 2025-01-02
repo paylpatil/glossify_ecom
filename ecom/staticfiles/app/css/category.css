@@ -1,0 +1,18 @@
+.container {
+    padding: 20px;
+}
+
+.product-card {
+    margin-bottom: 15px;
+}
+
+.product-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.product-image {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+}

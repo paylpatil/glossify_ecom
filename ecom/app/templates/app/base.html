@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %} Cosmetics Products {% endblock title %}</title>
+  {% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'app/css/styles.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app/css/category.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app/css/productdetail.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app/css/ac.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app/css/customerregistration.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app/css/profile.css' %}">
+  {% endblock %}
+
+  <link rel="stylesheet" type="text/css" href="{% static 'app/css/styles.css' %}">
+</head>
+<body>
+  <header>
+    <h1>BUY ANY 3 AND GET 10% OFF</h1>
+    <nav>
+      <div class="logo">
+        <img src="static/app/images/glossify.png" alt="Cosmetic Logo">
+      </div>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li>
+          <a href="#">Shop</a>
+          <ul>
+            <li><a href="{% url 'category' 'B' %}">Blush</a></li>
+            <li><a href="{% url 'category' 'LG' %}">Lip Gloss</a></li>
+            <li><a href="{% url 'category' 'CL' %}">Color Eyeliner</a></li>
+          </ul>
+        </li>
+        <li><a href="{% url 'about' %}">About Us</a></li>
+        <li><a href="{% url 'contact' %}">Contact Us</a></li>
+        <li>
+          <form action="/search" method="get">
+            <input type="text" placeholder="Search...">
+            <button type="submit">Search</button>
+          </form>
+        </li>
+        <li><a href="{% url 'profile' %}">Profile</a></li>
+        <li><a href="{% url 'login' %}">Login</a></li>
+        <li><a href="{% url 'customerregistration' %}">Registration</a></li>
+        <li><a href="/cart">Cart</a></li>
+      </ul>
+    </nav>
+  </header>
+{% block banner-slider %}{% endblock banner-slider %}
+{% block info %}{% endblock info %}
+{% block main-content %}{% endblock main-content %}
+  <footer>
+    Copyright: 2024 || Develop by: Payal Patil
+  </footer>
+  <script src="static/app/js/scripts.js"></script>
+</body>
+</html>
